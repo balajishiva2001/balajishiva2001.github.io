@@ -58,4 +58,27 @@
       }
     });
   });
+
+  /* ── unique visitor counter ──────────────────────────── */
+  var counterEl = document.getElementById('unique-visitor-count');
+  if (counterEl) {
+    var hasVisited = localStorage.getItem('has_visited_portfolio');
+    var key = 'balajishiva2001_portfolio_unique';
+    var baseUrl = 'https://countapi.mileshilliard.com/api/v1';
+    var url = hasVisited ? (baseUrl + '/get/' + key) : (baseUrl + '/hit/' + key);
+
+    fetch(url)
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        counterEl.textContent = data.value;
+        if (!hasVisited) {
+          localStorage.setItem('has_visited_portfolio', 'true');
+        }
+      })
+      .catch(function(err) {
+        console.error('Error fetching counter:', err);
+        counterEl.textContent = 'N/A';
+      });
+  }
+
 })();

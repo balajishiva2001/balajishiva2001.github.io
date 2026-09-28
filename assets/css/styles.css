@@ -860,6 +860,13 @@ a.contact__v:hover { color: var(--aqua); }
   color: var(--text-faint);
 }
 
+/* ═══════════ FOOTER: COUNTER ═══════════ */
+.foot__l { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 12px; }
+.foot__t { display: inline-flex; align-items: center; line-height: 0; gap: 8px; }
+.foot__t a { display: inline-flex; align-items: center; text-decoration: none; }
+.foot__t br { display: none; }
+.foot__t .counterimg, .foot__t img, .foot__t iframe { display: block; border: 0; height: auto; max-height: 24px; max-width: 100%; width: auto; object-fit: contain; }
+
 /* ═══════════ REVEAL ═══════════ */
 .reveal {
   opacity: 0;
